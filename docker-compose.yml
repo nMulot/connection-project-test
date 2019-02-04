@@ -1,0 +1,30 @@
+version: "3"
+services:
+  node:
+    image: "nicolas974/connection-test-nodejs:dev"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "3000:3000"
+    networks:
+      - webnet
+  angular:
+    image: "nicolas974/connection-test-angular:dev"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.1"
+          memory: 50M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "4200:80"
+    networks:
+      - webnet
+networks:
+  webnet:
