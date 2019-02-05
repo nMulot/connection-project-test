@@ -1,7 +1,7 @@
 version: "3"
 services:
   node:
-    image: "nicolas974/connection-test-nodejs:v1.0.0"
+    image: "nicolas974/connection-test-nodejs:v1.0.1"
     deploy:
       resources:
         limits:
@@ -14,7 +14,7 @@ services:
     networks:
       - webnet
   angular:
-    image: "nicolas974/connection-test-angular:v1.0.0"
+    image: "nicolas974/connection-test-angular:v1.0.1"
     deploy:
       resources:
         limits:
